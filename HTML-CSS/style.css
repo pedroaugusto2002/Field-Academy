@@ -113,15 +113,15 @@ img.imgsize{
     
 }
 footer{
+    color: aqua;
     border: 0;
     width: 100%;
     padding-left: 15px;
     padding-right:0%;
-    background-color: aqua;
     
 }
 .row-footer h4:hover{
-    color: brown;
+    color: rgb(133, 131, 131);
 }
 .icons img:hover{
     filter: contrast(0);
@@ -132,6 +132,7 @@ footer{
 
 }
 .row-footer {
+    color: aquamarine;
     display: flex;
     justify-content: center;
     flex: 1 1 150px;
@@ -161,14 +162,18 @@ footer{
     padding: 15px;
 }
 .footer-col h4{
+    color: hsl(171, 66%, 44%);
     font-size: 20px;
     margin-bottom: 20px;
     font-weight: 500;
     position: relative;
 }
 a{
-   color:aliceblue;
+   color:hsl(171, 66%, 44%);
    text-decoration: none;
+}
+a:hover{
+    color: grey;
 }
 .footer-col ul{
     margin: 10px 0;
