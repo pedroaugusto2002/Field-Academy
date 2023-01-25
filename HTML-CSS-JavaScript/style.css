@@ -1,0 +1,26 @@
+.container{
+    background-image: url(images/bg-desktop-light.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.header{
+    display: flex;
+    height: 330px;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    
+}
+.add-task{
+    height: auto;
+    width: 400px;
+}
+.add-task h1{
+
+}
+input {
+    width: 400px;
+    height: 45px;
+    border-radius: 10px;
+    border-style: none;
+}

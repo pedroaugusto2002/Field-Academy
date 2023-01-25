@@ -1,0 +1,79 @@
+.container{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(images/bg-header-desktop.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.background{
+    height: 60px;
+    width: 10px;
+}
+.logo{
+    padding-bottom: 10px;
+    border: solid;
+}
+.button{
+    height: 50px;
+    padding-bottom: 100px;
+}
+button{
+    margin-left: 10px;
+    height: 50px;
+    width: 180px;
+    font-size: medium;
+    border-radius: 40px;
+    border: none;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.301);
+    
+}
+button#ios{
+    background-color: rgb(37, 184, 137);
+    color: aliceblue;
+}
+button#mac{
+    background-color: rgb(28, 70, 197);
+    color: aliceblue
+}
+.computer-img{
+    display: flex;
+    align-items: flex-start;
+    gap: 80px;
+    height: auto;
+    width: auto;
+}
+img#computer{
+    width: 50%;
+
+}
+div.middle-text{
+    text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+section.middle{
+    padding-bottom: 40px;
+}
+div.semi-middle{
+    padding-bottom: 40px;
+}
+div.computer-img{
+    padding-bottom: 40px;
+}
+div.middle-text-2{
+    text-align: center;
+    padding-bottom: 40px;
+}
+div.middle-text-3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+div.middle-texts-3{
+    
+    flex: 1 1 150px;
+}
+#second-image{
+    width: 50%;
+}
