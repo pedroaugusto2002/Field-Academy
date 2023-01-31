@@ -5,18 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style2.css">
     <title>TESTE</title>
 </head>
 
 <body>
     <div class="container">
         <div class="header">
-            <input type="text" id="createTask" placeholder="Digite a nova tarefa">
-            <button id="addTask">
-                <i class="fa fa-plus">
-
-                </i>
-            </button>
+            <h1>TODO</h1>
+            <div class="createadd">
+                <input type="text" id="createTask" placeholder="Digite a nova tarefa">
+                <button id="addTask">
+                    <i class="fa fa-plus">
+                    </i>
+                </button>
+            </div>
 
             <ul id="taskList">
             
@@ -25,6 +28,23 @@
         </div>
 
     </div>
+    <div id="editWindow" class="">
+        <button id="closeWindow">
+            <i class="fa fa-remove"></i>
+        </button>
+        <h2 id="idTaskEdit">#xxxx</h2>
+        <hr>
+        <form>
+            <div>
+                <label>Nome<input type="text" id="taskEditText"></label>
+            </div>
+            <div>
+                <button id="saveButton">Salvar</button>
+            </div>
+
+        </form>
+    </div>
+    <div id="editWindowBackground" class=""></div>
 
     <script src="teste.js"></script>
 </body>
