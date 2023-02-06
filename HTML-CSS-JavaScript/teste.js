@@ -83,6 +83,7 @@
             span.innerHTML = task.name;
 
             let div = document.createElement('div');
+            div.classList.add('taskListBnt');
 
             let buttonEdit = document.createElement('button');
             buttonEdit.classList.add('bntAction');
