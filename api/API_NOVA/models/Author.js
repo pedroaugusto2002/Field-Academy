@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
-const BookSchema = mongoose.Schema({
-    title: {
+const AuthorSchema = mongoose.Schema({
+    name: {
         type: String, 
         require: true
     },
@@ -9,15 +9,15 @@ const BookSchema = mongoose.Schema({
         type: Number, 
         require: true
     },
-    author: {
+    books:[{
         type: mongoose.Schema.Types.ObjectId, 
-        require: false, 
-        ref: 'Author',
+        ref: 'Book', 
+        require: false,
         default: null
-    }
+    }] 
 })
 
-const Book = mongoose.model('Book',(BookSchema))
+    
 
-module.exports = Book
 
+const Author = mongoose.model('Author',(AuthorSchema))

@@ -2,9 +2,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Book = require('./models/Book');
 const app = express();
+const booksRoutes = require('./routes/booksRouters')
 mongoose.set("strictQuery", true);
 
 const book = require('./models/Book')
+
+app.use('/books', booksRoutes)
 
 app.use(
     express.urlencoded({
@@ -31,30 +34,3 @@ mongoose
 
 app.listen(3000);
 
-app.post('/books', async (req, res) =>{
-
-    const {title, id} = req.body
-
-    if(!title){
-        res.status(422).json({error: 'Dados obrigatorios'})
-    }
-    
-    const book = {
-        title,
-        id
-    }
-
-    try {
-        
-        await Book.create(book)
-        res.status(201).json({message:'Livro inserido com sucesso'})
-
-    } catch (error) {
-        res.status(500).json({error: error})
-    }
-
-})
-
-app.get('/', (req, res) =>{
-    res.json({message: 'Olá mundo'})
-})
