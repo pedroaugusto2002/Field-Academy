@@ -1,18 +1,18 @@
 const cors = require('cors');
 const express = require('express');
-app = express();
-const books = require('./data/bibliotaca.json');
 
-livros = [{
-    id: 'id_do_livro',
-    name: '',
-    author_id: 2
-},
-{
-    id: 'id_do_livro_2',
-    name: '',
-    author_id: 3
-}]
+const connectionString = 'mongodb+srv://pedroaugusto:pedro123@cluster0.f4zzscs.mongodb.net/?retryWrites=true&w=majority';
+
+app = express();
+
+const mongoose = require('mongoose');
+mongoose.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true})
+    .then(() => {
+        app.emit('pronto')
+    });
+
+let books = require('./data/bibliotaca.json');
+
 
 app.use(express.json());
 app.use(cors());
@@ -23,7 +23,7 @@ app.get('/books', (req, res)=>{
     return res.json(books);
 });
 
-app.post('/bookadd', (req, res)=>{
+app.post('/books', (req, res)=>{
     books.push({...req.body});
     const response = {
         total: books.length,
@@ -32,9 +32,9 @@ app.post('/bookadd', (req, res)=>{
     return res.json(response);
 })
 
-app.put('/bookput/:id', (req, res) =>{
+app.put('/books/:id', (req, res) =>{
     const bookId = parseInt(req.params.id)
-    res.json(bookId)
+    
     const book = books.find(book => book.id === bookId)
     if(!book){ 
         return res.json({error: "Usuario não encontrado"})
@@ -54,7 +54,10 @@ app.put('/bookput/:id', (req, res) =>{
     return res.json(response);
 })
 
+app.on('pronto', ()=>{
+    app.listen(3000, ()=>{
+        console.log('Aberto na porta http://localhost:3000')
+    });
+});
 
-app.listen('3000')
 
-console.log('Servidor ligado: http:/locahost:3000');
