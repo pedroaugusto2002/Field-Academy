@@ -4,12 +4,14 @@ const Book = require('./models/Book');
 const app = express();
 const booksRoutes = require('./routes/booksRouters')
 const authorRoutes = require('./routes/authorsRouters')
+const authorBooksRouter = require('./routes/authorBooksRoutes')
 mongoose.set("strictQuery", true);
 
 const book = require('./models/Book')
 
-app.use('/books', booksRoutes)
+app.use('/author-book', authorBooksRouter)
 app.use('/author',  authorRoutes)
+app.use('/books', booksRoutes)
 
 app.use(
     express.urlencoded({

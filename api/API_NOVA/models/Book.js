@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const Author = require('./Author')
 
 const BookSchema = mongoose.Schema({
     title: {
@@ -9,12 +10,11 @@ const BookSchema = mongoose.Schema({
         type: Number, 
         require: true
     },
-    author: [{
-        type: mongoose.Schema.Types.ObjectId, 
-        require: false, 
-        ref: 'Author',
+    author: {
+        type: Array, 
+        require: false,
         default: null
-    }]
+    }
 })
 
 const Book = mongoose.model('Book',(BookSchema))
