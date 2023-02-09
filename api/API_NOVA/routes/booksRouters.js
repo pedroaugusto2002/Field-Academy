@@ -48,7 +48,7 @@ router.get('/:id', async (req, res) =>{
 
     try {
 
-        const book = await Person.findOne({id: bookid})
+        const book = await Book.findOne({id: bookid})
 
         if(!book){
             res.json('Livro não encontrado')
@@ -96,7 +96,7 @@ router.patch('/:id', async (req, res) =>{
 router.delete('/:id', async (req, res) =>{
     const bookid = req.params.id
 
-    const book = await Person.findOne({id: bookid})
+    const book = await Book.findOne({id: bookid})
 
     if(!book){
         res.json('Livro não encontrado')
@@ -114,6 +114,8 @@ router.delete('/:id', async (req, res) =>{
 
 
 })
+
+
 
 
 module.exports = router

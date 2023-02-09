@@ -9,12 +9,12 @@ const BookSchema = mongoose.Schema({
         type: Number, 
         require: true
     },
-    author: {
+    author: [{
         type: mongoose.Schema.Types.ObjectId, 
         require: false, 
         ref: 'Author',
         default: null
-    }
+    }]
 })
 
 const Book = mongoose.model('Book',(BookSchema))

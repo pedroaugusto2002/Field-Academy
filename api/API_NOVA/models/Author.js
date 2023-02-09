@@ -9,15 +9,14 @@ const AuthorSchema = mongoose.Schema({
         type: Number, 
         require: true
     },
-    books:[{
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Book', 
+    books:{
+        type: Array,
         require: false,
-        default: null
-    }] 
+        default:"Nenhum livro registrado"
+    }
 })
-
-    
 
 
 const Author = mongoose.model('Author',(AuthorSchema))
+
+module.exports = Author
