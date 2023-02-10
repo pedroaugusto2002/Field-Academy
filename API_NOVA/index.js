@@ -28,7 +28,7 @@ mongoose
 .connect(`mongodb+srv://${db_user}:${db_password}@apicluster.59zwhzx.mongodb.net/myfirstapi?retryWrites=true&w=majority`)
 
 .then(()=>{
-    console.log('Conectados');
+    console.log('Conectado na porta http://localhost:3333');
     app.listen(3333);
 })
 
@@ -36,5 +36,5 @@ mongoose
    console.log(err)
 })
 
-app.listen(3000);
+
 

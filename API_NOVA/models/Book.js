@@ -11,7 +11,7 @@ const BookSchema = mongoose.Schema({
         require: true
     },
     author: {
-        type: Array, 
+        type: Object, 
         require: false,
         default: null
     }

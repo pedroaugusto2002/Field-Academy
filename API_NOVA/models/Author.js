@@ -12,7 +12,7 @@ const AuthorSchema = mongoose.Schema({
     books:{
         type: Array,
         require: false,
-        default:"Nenhum livro registrado"
+        default: null
     }
 })
 
