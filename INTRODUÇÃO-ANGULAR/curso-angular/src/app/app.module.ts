@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TesteComponent } from './components/teste/teste.component';
 import { OlamundoComponent } from './components/olamundo/olamundo.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ChapionsComponent } from './components/chapions/chapions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TesteComponent,
-    OlamundoComponent
+    OlamundoComponent,
+    ChapionsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

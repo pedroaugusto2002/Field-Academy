@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./olamundo.component.css']
 })
 export class OlamundoComponent {
-
+  
 }

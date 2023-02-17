@@ -10,7 +10,7 @@ router.use(express.json())
 //create
 router.post('/', async (req, res) =>{
 
-    const {title, id} = req.body
+    const {title} = req.body
 
     if(!title){
         res.status(422).json({error: 'Dados obrigatorios'})
@@ -18,8 +18,7 @@ router.post('/', async (req, res) =>{
     }
     
     const book = {
-        title,
-        id,
+        title
     }
 
     try {

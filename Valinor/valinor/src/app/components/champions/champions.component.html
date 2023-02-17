@@ -3,8 +3,16 @@
 
     <div class="container">
         <div class="championSplashArt"*ngFor="let champion of champions">
-            <label class="nameChampion">Name: {{champion.name}}</label>
+            <div class="titles">
+                <label class="championDescription">{{champion.title}}</label>
+                <label class="nameChampion">{{champion.name}}</label>
+            </div>
             <img src="{{champion.image.sprite}}" alt="">
+            <div class="tags">
+                <div class="tag"><img src="https://universe.leagueoflegends.com/images/role_icon_{{champion.tags[0] | lowercase}}.png" height="48px" width="48px" alt=""></div>
+                <div class="tag"><img src="https://universe.leagueoflegends.com/images/role_icon_{{champion.tags[1] | lowercase}}.png" height="48px" width="48px" alt=""></div>
+            </div>
+            <div class="fade"></div>
         </div>
     </div>
 
