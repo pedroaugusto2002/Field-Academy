@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    position: relative;
+}
+.championSplashArt{
+    align-items: baseline;
+    padding: 15px;
+}
+.nameChampion{
+    position: absolute;
+    align-items: baseline;
+    
+}
