@@ -1,0 +1,10 @@
+.header img{
+    max-height: 8em;
+}
+.header{
+    display: flex;
+    justify-content: center;
+}
+body{
+    margin: 0px;
+}

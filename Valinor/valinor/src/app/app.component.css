@@ -1,5 +1,26 @@
 *{
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
     
+}
+
+header{
+    position: relative;
+    height: 3em;
+}
+.container{
+    background-image: url("https://steamuserimages-a.akamaihd.net/ugc/910170255372683203/57145AF7CBF72AAE24980B83B1EBCBB8778D42BB/");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    padding-bottom: 400px;
+}
+.container img{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    margin: 0px;
 }

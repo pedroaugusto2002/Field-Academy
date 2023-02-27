@@ -1,18 +1,38 @@
 <div>
-    <h2>Champions</h2>
-
+    
     <div class="container">
-        <div class="championSplashArt"*ngFor="let champion of champions">
+        <div class="championSplashArt" 
+        *ngFor="let champion of champions">
+            <div class="info">
+                <a routerLink="/{{champion.id}}">
+                    <img src="https://www.sparda-bw.de/internetauftritt/bilder/allgemein/info-icon-grau_365w.png" class="item" alt="">
+                </a>
+            </div>
             <div class="titles">
-                <label class="championDescription">{{champion.title}}</label>
                 <label class="nameChampion">{{champion.name}}</label>
+                <label class="championDescription">{{champion.title}}</label>
             </div>
-            <img src="{{champion.image.sprite}}" alt="">
+            <img class ="sprite" src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champion.id}}_0.jpg" alt="">
             <div class="tags">
-                <div class="tag"><img src="https://universe.leagueoflegends.com/images/role_icon_{{champion.tags[0] | lowercase}}.png" height="48px" width="48px" alt=""></div>
-                <div class="tag"><img src="https://universe.leagueoflegends.com/images/role_icon_{{champion.tags[1] | lowercase}}.png" height="48px" width="48px" alt=""></div>
+                <div *ngIf="champion.tags[0] != null" class="tag">
+                    <img 
+                    src="https://universe.leagueoflegends.com/images/role_icon_{{champion.tags[0] | lowercase}}.png"  
+                    alt="{{champion.tags[0]}}" 
+                    title="{{champion.tags[0]}}"
+                    >
+                </div>
+                
+                <div *ngIf="champion.tags[1] != null" class="tag" title="">
+                    <img 
+                        src="https://universe.leagueoflegends.com/images/role_icon_{{champion.tags[1] | lowercase}}.png"  
+                        alt="{{champion.tags[1]}}" 
+                        data-title="{{champion.tags[0]}}"
+                    >
+                </div>
             </div>
-            <div class="fade"></div>
+            <div class="fade">
+                
+            </div>
         </div>
     </div>
 
