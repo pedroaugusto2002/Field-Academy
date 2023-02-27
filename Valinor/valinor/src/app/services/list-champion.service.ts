@@ -13,12 +13,12 @@ export class ListChampionService {
   
   
   getAll(): Observable<Champion[]>{
-    const champions: Champion[] = []
-    return this.httpClient.get<Champion[]>('http://localhost:3000/champions')
+    return this.httpClient.get<{data:any}>('https://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion.json').pipe(map((response) =>{
+      return Object.values(response.data) as Champion[]
+    }))
   }
 
   getChampion(id: string): Observable<ChampionDetails>{
-    const champion: Object = {}
     return this.httpClient.get<{data:any}>(`http://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion/${id}.json`).pipe(map((response)=>{
       return response.data[id]
     }))

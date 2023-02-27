@@ -19,8 +19,9 @@ export class ChampionsComponent implements OnInit{
   }
 
   getChampions(): void{
-    this.ChampionService.getAll().subscribe((champions) => (this.champions = champions));
-    console.log(Object.keys(this.champions))
+    this.ChampionService.getAll().subscribe((champion) => (this.champions = champion));
+    console.log(Object.values(this.champions))
+    
   }
 }
 

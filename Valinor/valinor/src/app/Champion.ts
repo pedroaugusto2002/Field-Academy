@@ -1,6 +1,5 @@
 export interface Champion {
-champion:{}
-   version: Number,
+    version: Number,
     id: String,
     key: Number,
     name: String,
@@ -48,7 +47,6 @@ champion:{}
         attackspeedperlevel: Number,
         attackspeed: Number
     }
-
 }
 
 
