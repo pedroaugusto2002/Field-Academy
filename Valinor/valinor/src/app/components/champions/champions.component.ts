@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {Injectable, NgModule} from '@angular/core';
 import {MatPaginatorIntl, MatPaginatorModule} from '@angular/material/paginator';
 import {PageEvent} from '@angular/material/paginator';
 import { ListChampionService } from 'src/app/services/list-champion.service';
 import { Champion } from 'src/app/Champion';
 import { Page, PageRequest } from 'src/app/_util/Pagination';
+import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-champions',
   templateUrl: './champions.component.html',
   styleUrls: ['./champions.component.css']
 })
-export class ChampionsComponent implements OnInit{
+export class ChampionsComponent implements  OnInit{
   champions: Champion[] = [];
   pageNow?: number;
   limit?: number;
@@ -18,9 +19,15 @@ export class ChampionsComponent implements OnInit{
   itemsPerPageLabel = 'Itens Por Pagina';
   lastPageLabel = 'Ultima Pagina';
 
+  searchText = new FormControl('')
+
   nextPageLabel = 'Proxima Pagina';
   previousPageLabel = 'Pagina Anterior';
   maxCount: any;
+  
+  searchTest = false
+
+  
 
   getRangeLabel(page: number, pageSize: number, lenght: number): string{
     if(lenght === 0){
@@ -41,6 +48,15 @@ export class ChampionsComponent implements OnInit{
   ){
     this.listChampions(0, 8)
   }
+  ngOnInit(): void {
+    this.searchText.valueChanges.subscribe(text => {
+      console.log(text)
+      if(!text) return
+      
+      this.search()
+      
+    })
+  }
   /*getChampions(): void{
     this.ChampionService.getAll().subscribe(
       (champion) => (this.champions = champion));
@@ -50,14 +66,22 @@ export class ChampionsComponent implements OnInit{
 
   listChampions(page: any, limit: any): void{
     
-    this.ChampionService.getChampions(page+1, limit)
+    this.ChampionService.getChampions(page+1, limit, this.searchText.value)
     .subscribe(
-      (champions) => {this.champions = champions}
+      (response) => {
+        this.maxCount = response.totalCount
+        this.champions = response.champions
+      }
     )
-    this.maxCount = this.ChampionService.getTotalCounts()
+  }
+
+  search(){
+    this.ChampionService.searchChampion(this.searchText.value)
     .subscribe(
-      (counts) => {this.maxCount = counts}
-      
+      (response) => {
+        this.maxCount = response.length
+        this.champions=response
+      }
     )
   }
 }
