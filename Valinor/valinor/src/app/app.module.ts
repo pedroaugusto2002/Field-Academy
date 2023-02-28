@@ -5,25 +5,27 @@ import { HttpClientModule, HttpHeaders } from '@angular/common/http'
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChampionsComponent } from './components/champions/champions.component';
 import { ChampionDetailComponent } from './components/champion-detail/champion-detail.component';
 import { HeaderComponent } from './components/header/header.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChampionsComponent,
     ChampionDetailComponent,
-    HeaderComponent
+    HeaderComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
