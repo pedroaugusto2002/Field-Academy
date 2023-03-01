@@ -17,7 +17,7 @@ export class ListChampionService {
   
   getChampions(page: any, limit: any, text?: string | null): Observable<{totalCount: number, champions: Champion[]}>{
     return this.httpClient
-    .get(`http://localhost:3000/champions?_page=${page}&_limit=${limit}&q=${text || ''}`, { observe: 'response'})
+    .get(`http://localhost:3000/champions?_page=${page}&_limit=${limit}&id_like=${text || ''}`, { observe: 'response'})
     .pipe(
       map((response) =>{
         console.log(response)
@@ -43,7 +43,7 @@ export class ListChampionService {
     ))
     
   }*/
-  searchChampion(searchTerm: any, limit?: number): Observable<Champion[]>{
+  searchChampion(searchTerm: any): Observable<Champion[]>{
     
     return this.httpClient
     .get<{data:any}>(`http://localhost:3000/champions?q=${searchTerm}`)
@@ -53,6 +53,7 @@ export class ListChampionService {
         return Object.values(response) as Champion[]
       })
     )
+    
   }
 
   getTotalCounts(): Observable<Champion[]>{

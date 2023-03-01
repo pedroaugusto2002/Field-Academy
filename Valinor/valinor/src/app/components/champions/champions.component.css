@@ -7,12 +7,13 @@ img {
     display: inline-block;
 }
 .container{
-    height: 110%;
+    height: 100%;
     display: flex;
     position: relative;
     justify-content: center;
     flex-wrap: wrap;
     gap: 5em;
+    padding-bottom: 60px;
 }
 .championSplashArt{
     display: flex;
@@ -54,12 +55,11 @@ img {
     display: flex;
     justify-content: center;
     align-self: flex-end;
-    align-items: end;
+    align-items: center;
     position: absolute;
     z-index: 6;
     padding-bottom: 33%;
-    gap: 1%;
-    flex-wrap: wrap;
+    flex-direction: column;
     
 }
 .championDescription{
@@ -72,30 +72,24 @@ img {
     font-weight: 400;
     font-style: italic;
     text-transform: uppercase;
-    font-family: Arial, Helvetica, sans-serif;
     color: azure;
-    padding-top: 0%;
-    padding-bottom: 2%;
+    flex-wrap: wrap;
 
     
 }
   
 .nameChampion{
-    position: absolute;
     max-width: 100%;
     max-block-size: 100%;
     display: flex;
     align-items: flex-start;
     text-align: center;
     font-weight: 600;
-    font-family: Arial, Helvetica, sans-serif;
-    text-shadow: 2px 2px 12px #ffffff64;
+    text-shadow: 2px 2px 12px #35343464;
     justify-content: center;
     color: rgb(187, 113, 23);
     width: 100%;
     padding-top: 8%;
-    padding-bottom: 12%;
-    background-image: linear-gradient(transparent, #00000073, transparent);
     background-size: cover;
     
 
@@ -148,10 +142,61 @@ img {
 
 }
 .paginator{
-    padding-top: 25px;
+    height: 80px;
+    padding-top: 40px;
 }
-
-@media screen and (max-width: 380px) {
+.searchBar{
+    padding-bottom: 12px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchBar input{
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 30px;
+    transition: all 0.2s linear;
+}
+.searchBar input:hover, input:focus{
+    scale: 1.1;
+}
+@media screen and (max-width: 2100px) {
+    .nameChampion{
+        font-size: 3em;
+    }
+    .searchBar input{
+        height: 40px;
+        width: 260px;
+        text-align: center;
+        font-size: 1em;
+        border-radius: 30px;
+        transition: all 0.2s linear;
+    }
+    .championDescription{
+        font-size: 1em;
+    }
+}
+@media screen and (max-width: 1400px){
+    .nameChampion{
+        font-size: 1.8em;
+    }
+    .searchBar input{
+        height: 40px;
+        width: 260px;
+        text-align: center;
+        font-size: 1em;
+        border-radius: 30px;
+        transition: all 0.2s linear;
+    }
+    .championDescription{
+        font-size: .8em;
+    }
+}
+@media screen and (max-width: 450px) {
+    
     .container{
         
         display: flex;
@@ -159,7 +204,8 @@ img {
         flex-wrap: wrap;
     }
     .championSplashArt{
-        width: 40%;
+        width: 55%;
         max-width: 80%;
     }
+    
 }

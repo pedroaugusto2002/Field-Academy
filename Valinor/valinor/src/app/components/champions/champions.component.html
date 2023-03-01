@@ -1,8 +1,14 @@
 <div>
-    <form >
-        <input type="text" placeholder="Busque por um Campeão" [formControl]="searchText">
-        {{searchText}}
-    </form>
+    <div class="searchBar">
+        <form class="input">
+            <input 
+            class="form-control"
+            type="text" 
+            placeholder="Busque por um Campeão"
+            [formControl]="searchText"
+            (input)="listChampions(pageEvent?.pageIndex, pageEvent?.pageSize, $event);">
+        </form>
+    </div>
 
     <div class="container">
         

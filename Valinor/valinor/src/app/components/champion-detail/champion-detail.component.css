@@ -1,9 +1,12 @@
+@import url(//db.onlinewebfonts.com/c/12420e8c141ca7c3dff41de2d59df13e?family=BeaufortforLOL-Bold);
+
 *{
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
     color: rgb(187, 113, 23);
+    margin: 0px;
+    font-family: "BeaufortforLOL-Bold";
 }
 ul{
     list-style-type: none;
@@ -76,14 +79,16 @@ ul{
     font-size: 0.75em;
 }
 .spells{
-    padding-top: 9%;
+    padding-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.spellImage{
+.spellImage {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding-top: 4.5%;
-    gap: 10%;
+    gap: 25px;
     display: flex;
 }
 .spellImage img{
@@ -247,6 +252,67 @@ button{
     height: 100%;
     max-height: 100%;
     max-width: 100%;
+}
+.spellDescriptions{
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+}
+.spell{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 12px;
+}
+.spell:focus .lore{
+    display: none;
+}
+.spell h1{
+    padding-bottom: 8px;
+    font-size: 2em;
+}
+video{
+    max-width: 100%;
+    max-height: 100%;
+}
+@media screen and (max-width: 2100px){
+    .splashArt img{
+        width: 550px;
+        
+    }
+    .championName{
+        font-size: 40px;
+    }
+    .spells h1, .lore h1{
+        font-size: 45px;
+    }
+    h2{
+        font-size: 1.8em;
+        font-style: italic;
+        color: #EDB852;
+        
+    }
+    .lore{
+        font-size: 1.5em;
+    }
+    .spellImage {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        display: flex;
+    }
+    .spellImage img:focus .lore{
+        display: none;
+    }
+    .spellImage h1{
+        font-size: 30px;
+    }
+    .showOff{
+        display: none;
+    }
+    .spell-showOn{
+        
+    }
 }
 @media screen and (max-width: 1400px) {
     .skinsContainer{

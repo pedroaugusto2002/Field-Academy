@@ -22,7 +22,45 @@ export class ChampionDetailComponent implements OnInit{
   ){
     this.getChampion();
   }
+
+  idForUrl(){
+    if(this.champion.key.length === 1){
+      return `000${this.champion.key}`
+    }
+    else if(this.champion.key.length === 2){
+      return `00${this.champion.key}`
+    }
+    else if(this.champion.key.length === 3){
+      return `0${this.champion.key}`
+    }
+    return this.champion.key
+  }
+
+  showSpellDesc(spellID: string){
+   let classToRemove = document.querySelector(".showOn")
+   let lore = document.querySelector(".lore")
+   let classToShow = document.getElementById(spellID)
+
+   if(classToShow?.className === 'spell showOn'){
+    classToShow.classList.remove('showOn')
+    classToShow.classList.add('showOff')
+
+    return
+   }
+   if(classToRemove){
+    classToRemove.classList.remove('showOn')
+    classToRemove.classList.add('showOff')
+    
+   }
+   
+   
+    classToShow?.classList.remove('showOff')
+    classToShow?.classList.add('showOn')
+
   
+  }
+  
+
   getChampion(): void{
     const id = this.route.snapshot.paramMap.get('id')!;
     this.championService.getChampion(id).subscribe((champion) => {

@@ -1,16 +1,8 @@
 <div class="body">
   <div *ngIf="champion" class="container">
     <div class="championDetails">
-      <div class="carrossel">
-        <div class="gallery-wrapper">
-          <div class="gallery">
-            <div class="splashArt">
-              <img *ngFor="let skin of champion.skins"
-                src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champion.id}}_{{skin.num}}.jpg"
-                alt="">
-            </div>
-          </div>
-        </div>
+      <div class="splashArt">
+        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champion.id}}_{{0}}.jpg" alt="">
       </div>
       <div class="championInfos">
         <div class="championName">
@@ -23,41 +15,79 @@
           <h1>Historia:</h1>
           <p>{{champion.lore}}</p>
         </div>
-        <div class="spells">
-          <h1>Habilidades:</h1>
 
-          <div class="spellImage">
-            <div class="spellDetail">
-              <h1>Q</h1>
-              <img src="http://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/{{champion.spells[0].id}}.png"
-                title="{{champion.spells[0].name}}" alt="">
-            </div>
-            <div class="spellDetail">
-              <h1>W</h1>
-              <img src="http://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/{{champion.spells[1].id}}.png"
-                title="{{champion.spells[1].name}}" alt="">
-            </div>
-            <div class="spellDetail">
-              <h1>E</h1>
-              <img src="http://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/{{champion.spells[2].id}}.png"
-                title="{{champion.spells[2].name}}" alt="">
-            </div>
-            <div class="spellDetail">
-              <h1>R</h1>
-              <img src="http://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/{{champion.spells[3].id}}.png"
-                title="{{champion.spells[3].name}}" alt="">
-            </div>
-          </div>
+        
+      </div>
+      
+
+    </div>
+    <div class="spells">
+      <h1>Habilidades:</h1>
+
+      <div class="spellImage">
+        <div class="spellDetail">
+          <h1>P</h1>
+          <img src="http://ddragon.leagueoflegends.com/cdn/13.4.1/img/passive/{{champion.id}}_P.png | https://ddragon.leagueoflegends.com/cdn/13.4.1/img/passive/{{champion.id}}_Passive.png" alt="">
+        </div>
+        <div class="spellDetail">
+          <h1>Q</h1>
+          <img (click)="showSpellDesc('Q')"
+            src="http://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/{{champion.spells[0].id}}.png"
+            title="{{champion.spells[0].name}}" alt="">
+        </div>
+        <div class="spellDetail">
+          <h1>W</h1>
+          <img (click)="showSpellDesc('W')"
+            src="http://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/{{champion.spells[1].id}}.png"
+            title="{{champion.spells[1].name}}" alt="">
+        </div>
+        <div class="spellDetail">
+          <h1>E</h1>
+          <img (click)="showSpellDesc('E')"
+            src="http://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/{{champion.spells[2].id}}.png"
+            title="{{champion.spells[2].name}}" alt="">
+        </div>
+        <div class="spellDetail">
+          <h1>R</h1>
+          <img (click)="showSpellDesc('R')"
+            src="http://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/{{champion.spells[3].id}}.png"
+            title="{{champion.spells[3].name}}" alt="">
         </div>
       </div>
+    </div>
+
+    <div class="spellDescriptions">
+      <div class="spell showOff" id="Q">
+        <h1>{{champion.spells[0].name}}</h1>
+        <p>{{champion.spells[0].description}}</p>
+        <video src="https://d28xe8vt774jo5.cloudfront.net/champion-abilities/{{idForUrl()}}/ability_{{idForUrl()}}_Q1.webm" type="webm" controls ></video>
+      </div>
+      <div class="spell showOff" id="W">
+        <h1>{{champion.spells[1].name}}</h1>
+        <p>{{champion.spells[1].description}}</p>
+        <video src="https://d28xe8vt774jo5.cloudfront.net/champion-abilities/{{idForUrl()}}/ability_{{idForUrl()}}_W1.webm" type="webm" controls ></video>
+      </div>
+      <div class="spell showOff" id="E">
+        <h1>{{champion.spells[2].name}}</h1>
+        <p>{{champion.spells[2].description}}</p>
+        <video src="https://d28xe8vt774jo5.cloudfront.net/champion-abilities/{{idForUrl()}}/ability_{{idForUrl()}}_E1.webm" type="webm" controls ></video>
+      </div>
+      <div class="spell showOff" id="R">
+        <h1>{{champion.spells[3].name}}</h1>
+        <p>{{champion.spells[3].description}}</p>
+        <video src="https://d28xe8vt774jo5.cloudfront.net/champion-abilities/{{idForUrl()}}/ability_{{idForUrl()}}_R1.webm" type="webm" controls ></video>
+      </div>
+
 
 
     </div>
     <div class="skinsContainer">
       <div class="fade"></div>
       <div class="skinFullScreen">
-          <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champion.id}}_{{champion.skins[0].num}}.jpg" class="skinFull-active" alt="">
-        </div>
+        <img
+          src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champion.id}}_{{champion.skins[0].num}}.jpg"
+          class="skinFull-active" alt="">
+      </div>
       <div class="skins">
         <div class="divTitle">
           <h1>Skins Disponiveis</h1>
@@ -78,7 +108,7 @@
             </li>
           </ul>
         </div>
-        
+
       </div>
     </div>
   </div>
