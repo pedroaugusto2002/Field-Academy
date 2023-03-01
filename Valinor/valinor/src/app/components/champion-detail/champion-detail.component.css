@@ -23,7 +23,7 @@ ul{
     background-color: rgba(0, 0, 0, 0.767);
     width: 70%;
     border-radius: 12px;
-    padding: 10px;
+    padding: 20px;
 }
 .carrossel{
     max-width: 25%;
@@ -53,7 +53,7 @@ ul{
     flex-flow:nowrap;
 }
 .splashArt img{
-    box-shadow: 0 0 5px rgb(187, 113, 23);
+    box-shadow: 0 0 10px rgb(187, 113, 23);
     border: solid white 0.5px;
     width: auto;
     max-width: 100%;
@@ -98,7 +98,7 @@ ul{
 }
 .spellDetail:hover img{
     
-    box-shadow: 0 0 5px rgb(187, 113, 23);
+    box-shadow: 0 0 10px rgb(187, 113, 23);
     scale: 1.1;
 }
 .spellDetail{
@@ -128,7 +128,6 @@ ul{
     border-bottom: solid 1px ;
 }
 .divTitle h1{
-    font-family: Arial, Helvetica, serif;
     font-size: 3em;
     color: white;
     text-transform: uppercase;
@@ -158,20 +157,33 @@ ul{
     height: 900px;
     width: 100%;
     max-width: 98%;
+    transition: all 3s linear;
+}
+#skinFull img{
+    transition: all 3s linear;
 }
 .fade{
-    bottom: 18%;
+    box-shadow: 0 0 20px rgb(187, 113, 23);
+    border: solid white 0.5px;
+    z-index: 3;
     position: absolute;
-    width: 98%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.918), transparent, transparent );
+}
+.skinFull-Fade{
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: all 3s linear;
 }
 .skinsButtons{
     height: 100%;
+    max-width: 100%;
 }
 .skinsList{
-    background-image: linear-gradient(to right black, transparent);
-    bottom: 16%;
+    bottom: 25%;
     margin: 20px 20px 0;
     z-index: 5;
     position: absolute;
@@ -182,26 +194,49 @@ ul{
     flex-flow: row nowrap;
     justify-content: flex-start;
     justify-self: flex-start;
-    width: 30%;
+    width: 548px;
     height: 70%;
-    max-height: 70%;
-    max-width: 30%;
+    max-height: 60%;
+    max-width: 548px;
+    inset: -2px -50px 50px 6px rgba(33,33,33,0.57);
+    border-bottom: solid 1px rgb(187, 113, 23);
 }
+  
 .skinIcons{
-    width: 80px;
-    height: 80px;
-    padding: 5px;
+    width: 90px;
+    height: 90px;
     object-fit: cover;
 }
 
 .skinListDetail{
-    padding-top: 25px;
+    padding-top: 35px;
     padding-bottom: 8px;
     gap: 20px;
     display: flex;
     color: white;
     justify-content: left;
     align-items: center;
+    opacity: 0.3;
+    transition: all .2s ease-in-out;
+}
+.skinListDetail h1{
+
+    max-width: 300px;
+}
+
+.skinListDetail:hover {
+    
+    opacity: 1;
+    padding-left: 60px;
+    transform: scale( 1.25);
+}
+.skinListDetail:hover img{
+    border: solid 1px rgb(187, 113, 23);
+}
+
+.skinListDetail:hover h1{
+    opacity: 1;
+    color: #EDB852;
 }
 .skinName{
     font-size: 1em;
@@ -257,6 +292,7 @@ button{
     display: flex;
     justify-content: center;
     text-align: justify;
+    margin-top: 20px;
 }
 .spell{
     display: flex;
@@ -267,6 +303,14 @@ button{
 .spell:focus .lore{
     display: none;
 }
+.spell {
+    display: none;
+}
+
+.spell.showOn {
+    display: flex;
+}
+
 .spell h1{
     padding-bottom: 8px;
     font-size: 2em;
@@ -274,8 +318,12 @@ button{
 video{
     max-width: 100%;
     max-height: 100%;
+    box-shadow: 0 0 20px rgb(187, 113, 23);
+    border: solid white 0.5px;
+    margin: 20px;
 }
 @media screen and (max-width: 2100px){
+   
     .splashArt img{
         width: 550px;
         
@@ -307,19 +355,15 @@ video{
     .spellImage h1{
         font-size: 30px;
     }
-    .showOff{
-        display: none;
-    }
-    .spell-showOn{
-        
-    }
+
 }
+
 @media screen and (max-width: 1400px) {
     .skinsContainer{
         max-height: 500px;
     }
     .skinsList{
-        bottom: 10%;
+        bottom: 25%;
         margin: 20px 20px 0;
         z-index: 5;
         position: absolute;
@@ -332,7 +376,7 @@ video{
         justify-self: flex-start;
         width: 30%;
         height: 60%;
-        max-height: 60%;
+        max-height: 50%;
         max-width: 30%;
     }
     

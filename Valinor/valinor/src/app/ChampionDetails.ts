@@ -30,6 +30,9 @@ export interface ChampionDetails{
     passive: {
         name: string,
         description: string,
+        image:{
+            full: string
+        }
     }
 
 

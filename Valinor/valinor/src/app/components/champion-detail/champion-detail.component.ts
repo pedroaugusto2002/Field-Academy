@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { ListChampionService } from 'src/app/services/list-champion.service';
-import { Champion } from 'src/app/Champion';
 import { ChampionDetails } from 'src/app/ChampionDetails';
 
 @Component({
@@ -12,6 +11,7 @@ import { ChampionDetails } from 'src/app/ChampionDetails';
 })
 export class ChampionDetailComponent implements OnInit{
   champion!: ChampionDetails ;
+  spellSelected = 'p'
   
 
   constructor(
@@ -36,28 +36,8 @@ export class ChampionDetailComponent implements OnInit{
     return this.champion.key
   }
 
-  showSpellDesc(spellID: string){
-   let classToRemove = document.querySelector(".showOn")
-   let lore = document.querySelector(".lore")
-   let classToShow = document.getElementById(spellID)
-
-   if(classToShow?.className === 'spell showOn'){
-    classToShow.classList.remove('showOn')
-    classToShow.classList.add('showOff')
-
-    return
-   }
-   if(classToRemove){
-    classToRemove.classList.remove('showOn')
-    classToRemove.classList.add('showOff')
-    
-   }
-   
-   
-    classToShow?.classList.remove('showOff')
-    classToShow?.classList.add('showOn')
-
-  
+  showSpellDesc(spell: string){
+   this.spellSelected = spell
   }
   
 
@@ -70,4 +50,10 @@ export class ChampionDetailComponent implements OnInit{
     console.log(this.champion)
   }
   
+  skinCarrossel(newIdSkin : any){
+    let skinFull = document.querySelector("#skinFull")
+    let urlSkinFull = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${this.champion.id}_${this.champion.skins[newIdSkin].num}.jpg`
+    skinFull?.setAttribute('src', urlSkinFull)
+
+  }
 }
