@@ -289,6 +289,7 @@ button{
     max-width: 100%;
 }
 .spellDescriptions{
+    
     display: flex;
     justify-content: center;
     text-align: justify;
@@ -359,14 +360,12 @@ video{
 }
 
 @media screen and (max-width: 1400px) {
+    
     .skinsContainer{
         max-height: 500px;
     }
     .skinsList{
-        bottom: 25%;
         margin: 20px 20px 0;
-        z-index: 5;
-        position: absolute;
         padding-top: 0;
         margin-top: 0;
         overflow-x: auto;
@@ -374,10 +373,113 @@ video{
         flex-flow: row nowrap;
         justify-content: flex-start;
         justify-self: flex-start;
-        width: 30%;
-        height: 60%;
-        max-height: 50%;
-        max-width: 30%;
+        max-height: 250px;
+        width: 300px;
+    }
+    .skinListDetail{
+        max-width: 200px!important;
+    }
+    .skinListDetail:hover{
+        padding-left: 40px;
+    }
+    .skinListDetail img{
+        height: 55px;
+        width: 55px;
+    }
+    .skinListDetail h1{
+        font-size: .65em;
     }
     
+    .skinsButtons{
+        height: 50%;
+    }
+    .divTitle{
+        padding: 0;
+        font-size: .9em;
+    }
+    .skin{
+        width: 300px;
+        position: relative;
+    }
+    
+}
+@media screen and (max-width: 400px){
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .championDetails{
+        flex-direction: column;
+        align-items: center;
+    }
+    .championName h1{
+        font-size: 1.5em;
+    }
+    .divTitle h2{
+        font-size: .8em;
+    }
+    .spellImage{
+        flex-flow: wrap;
+    }
+    
+    .divTitle h1{
+        font-size: 2em;
+    }
+    .divTitle{
+        margin: 0;
+        padding: 10px;
+        position: relative;
+        width: 100%;
+        max-width: 90%;
+    }
+    .skinsList{
+        position: relative;
+        padding: 0;
+        margin: 0;
+        height: 200px;
+        width: 100%;
+        max-width: 100%;
+        bottom: 0;
+        
+    }
+    .skinFullScreen{
+        position: relative;
+        height: unset;
+    }
+    .skinListDetail img{
+        width: 45px;
+        height: 45px;
+    }
+    .skinListDetail{
+        max-width: 160px!important;
+    }
+    .skinListDetail h1{
+        font-size: .8em;
+    }
+    .skinListDetail:hover {
+        max-width: 240px;
+        opacity: 1;
+        padding-left: 40px;
+    }
+    
+    .skinListDetail:hover h1{
+        opacity: 1;
+        color: #EDB852;
+    }
+    
+    .skins{
+        width: 95%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        height: 500px;
+    }
+    .skinsContainer{
+        
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: unset;
+        align-items: center;
+    }
 }

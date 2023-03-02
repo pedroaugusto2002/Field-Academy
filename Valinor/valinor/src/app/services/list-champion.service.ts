@@ -6,6 +6,7 @@ import { ChampionDetails } from '../ChampionDetails';
 import { Page, QueryBuilder } from '../_util/Pagination';
 import { Data } from '@angular/router';
 
+
 @Injectable({
   providedIn: 'root'
 })

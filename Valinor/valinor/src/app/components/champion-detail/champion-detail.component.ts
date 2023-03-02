@@ -52,7 +52,7 @@ export class ChampionDetailComponent implements OnInit{
   
   skinCarrossel(newIdSkin : any){
     let skinFull = document.querySelector("#skinFull")
-    let urlSkinFull = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${this.champion.id}_${this.champion.skins[newIdSkin].num}.jpg`
+    let urlSkinFull = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${this.champion.id}_${newIdSkin}.jpg`
     skinFull?.setAttribute('src', urlSkinFull)
 
   }
