@@ -2,6 +2,7 @@
     <div class="searchBar">
         <form class="input">
             <input 
+            data-test="search-input"
             class="form-control"
             type="text" 
             placeholder="Busque por um Campeão"
@@ -20,7 +21,7 @@
                 </a>
             </div>
             <div class="titles">
-                <label class="nameChampion">{{champion.name}}</label>
+                <label data-test="nameDisplay" class="nameChampion">{{champion.name}}</label>
                 <label class="championDescription">{{champion.title}}</label>
             </div>
             <img  class ="sprite" src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champion.id}}_0.jpg" alt="">
@@ -52,7 +53,7 @@
         [pageSizeOptions]="[8, 16, 24]"
         [pageSize]="8"
         aria-label="Select page"
-        pageIndex="pageIndex"
+        [pageIndex]="pageIndex"
         (page)="pageEvent = $event; listChampions(pageEvent.pageIndex, pageEvent.pageSize)">
         </mat-paginator>
     </div>

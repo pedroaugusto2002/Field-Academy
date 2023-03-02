@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Champion } from '../Champion';
 import { map, Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http'
 import { ChampionDetails } from '../ChampionDetails';
-import { Page, QueryBuilder } from '../_util/Pagination';
-import { Data } from '@angular/router';
 
 
 @Injectable({
@@ -21,7 +19,6 @@ export class ListChampionService {
     .get(`http://localhost:3000/champions?_page=${page}&_limit=${limit}&id_like=${text || ''}`, { observe: 'response'})
     .pipe(
       map((response) =>{
-        console.log(response)
         return {
           totalCount: Number(response.headers.get("x-total-count")),
           champions: Object.values(response.body || {}) as Champion[]
@@ -29,23 +26,9 @@ export class ListChampionService {
       })
      
     )
-    
-
   }
-  
-  /*getAll(): Observable<Champion[]>{
-    return this.httpClient
-    .get<{data:any}>('http://localhost:3000/champions')
-    .pipe(
-      map((response) =>
-      {
-      return Object.values(response) as Champion[]
-      }
-    ))
-    
-  }*/
+
   searchChampion(searchTerm: any): Observable<Champion[]>{
-    
     return this.httpClient
     .get<{data:any}>(`http://localhost:3000/champions?q=${searchTerm}`)
     .pipe(

@@ -19,6 +19,7 @@ export class ChampionsComponent implements OnInit {
   searchText = new FormControl('')
 
   maxCount: any;
+  pageIndex: any;
 
   pageEvent?: PageEvent | undefined
 
@@ -34,26 +35,23 @@ export class ChampionsComponent implements OnInit {
       
     })
   }
-  /*getChampions(): void{
-    this.ChampionService.getAll().subscribe(
-      (champion) => (this.champions = champion));
-    console.log(Object.values(this.champions))
-    
-  }*/
+  
 
   listChampions(page: any, limit: any, text?: Event | string ): void {
     let texto = this.searchText.value
+    console.log(this.searchText.value)
     if(!page) page=0
     if(!limit) limit=8
-    console.log(texto)
     if (texto) {
-      this.ChampionService.getChampions(page+1, limit, texto)
+      this.ChampionService.getChampions(page + 1, limit, texto)
         .subscribe(
           (response) => {
+            console.log(response)
             this.maxCount = response.totalCount
             this.champions = response.champions
           }
         )
+        this.pageIndex = 1  
       return
     }
     this.ChampionService.getChampions(page + 1, limit, this.searchText.value)
@@ -65,18 +63,7 @@ export class ChampionsComponent implements OnInit {
       )
   }
 
-  /*search(e: Event) {
-    const target = e.target as HTMLInputElement
-    const value = target.value
-    this.ChampionService.searchChampion(value)
-      .subscribe(
-        (response) => {
-          this.maxCount = response.length
-          this.champions = response
-        }
-      )
-
-  }*/
+ 
 
 }
 

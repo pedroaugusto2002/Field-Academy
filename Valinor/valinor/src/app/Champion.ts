@@ -1,10 +1,10 @@
 export interface Champion {
     version: Number,
-    id: String,
-    key: Number,
-    name: String,
-    title: String,
-    blurb: String,
+    id: string,
+    key: string,
+    name: string,
+    title: string,
+    blurb: string,
     info:{
         attack: Number,
         defense: Number,
@@ -12,9 +12,9 @@ export interface Champion {
         difficulty: Number
     },
     image: {
-        full: String,
-        sprite: String,
-        group: String,
+        full: string,
+        sprite: string,
+        group: string,
         x: Number,
         y: Number,
         w: Number,
@@ -24,7 +24,7 @@ export interface Champion {
         string,
         string
     ],
-    partype: String,
+    partype: string,
     stats: {
         hp: Number,
         hpperlevel: Number,
