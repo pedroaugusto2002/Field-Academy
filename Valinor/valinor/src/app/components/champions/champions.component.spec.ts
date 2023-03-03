@@ -2,8 +2,6 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Observable, of } from 'rxjs';
-import { Champion } from 'src/app/Champion';
-import { ChampionDetails } from 'src/app/ChampionDetails';
 import { ListChampionService } from 'src/app/services/list-champion.service';
 
 import { ChampionsComponent } from './champions.component';

@@ -5,9 +5,10 @@ import { ChampionsComponent } from './components/champions/champions.component';
 import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
-  {path:'', component:ChampionsComponent},
+  {path:'', component:ChampionsComponent,pathMatch:'full'},
+  {path:'search', component: SearchComponent},
   {path:':id', component:ChampionDetailComponent},
-  {path:':search', component: SearchComponent},
+  
 ];
 
 @NgModule({
