@@ -26,12 +26,18 @@ export class ChampionsComponent implements OnInit {
     this.listChampions(0, 8);
   }
   ngOnInit(): void {
-    this.searchText.valueChanges.subscribe((text) => {
-      if (!text) return;
+    this.searchText.valueChanges.pipe(
+      debounceTime(700)
+    ).subscribe((text) => {
+      if (!text) {
+        this.listChampions() 
+        return
+      };
+      
+      this.listChampions()
     });
-    
   }
-  listChampions(page: any, limit: any, text?: Event | string ): any{
+  listChampions(page?: any, limit?: any): any{
     
     let texto = this.searchText.value;
     console.log(this.searchText.value);
