@@ -11,6 +11,7 @@ import { ChampionDetailComponent } from './components/champion-detail/champion-d
 import { HeaderComponent } from './components/header/header.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ChampionsComponent,
     ChampionDetailComponent,
     HeaderComponent,
+    SearchComponent,
     
   ],
   imports: [

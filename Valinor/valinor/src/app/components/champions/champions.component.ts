@@ -34,6 +34,7 @@ export class ChampionsComponent implements OnInit {
       if (!text) return
       
     })
+    console.log(this.searchText.valueChanges)
   }
   
 
