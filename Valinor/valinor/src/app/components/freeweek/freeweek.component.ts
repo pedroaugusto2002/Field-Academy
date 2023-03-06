@@ -36,10 +36,6 @@ export class FreeweekComponent implements OnInit {
     
     console.log('icon center')
       let icon = document.querySelector('.icon.selectedIcon')
-      icon?.scrollIntoView({
-        inline: "center", block:"nearest"
-        
-      })
     console.log('terminei')
   }
   FreeWeekChampions(): void {

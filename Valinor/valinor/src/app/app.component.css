@@ -19,6 +19,7 @@
     background-attachment: fixed;
     padding-bottom: 150px;
     min-height: 800px;
+    overflow: hidden;
 }
 .container img{
     height: 100%;

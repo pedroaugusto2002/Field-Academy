@@ -5,6 +5,9 @@ h1{
     color: #f9f9f9;
     text-transform: uppercase;
 }
+.linksButton{
+    display: none;
+}
 .header{
     height: 50px;
     padding: 10px;
@@ -69,5 +72,15 @@ h1{
     .links h1{
         font-size: 10px;
         justify-content: center;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .linksButton{
+        display: block;
+    }
+    .linksButton{
+        max-width: 40px;
+        max-height: 40px;
     }
 }
