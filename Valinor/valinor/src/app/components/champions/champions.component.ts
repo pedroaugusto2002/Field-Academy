@@ -3,8 +3,7 @@ import { PageEvent } from '@angular/material/paginator';
 import { ListChampionService } from 'src/app/services/list-champion.service';
 import { Champion } from 'src/app/Champion';
 import { FormControl } from '@angular/forms';
-import { debounce, debounceTime, fromEvent, interval, timeInterval, timer } from 'rxjs';
-import { TestBed } from '@angular/core/testing';
+import { debounceTime } from 'rxjs';
 @Component({
   selector: 'app-champions',
   templateUrl: './champions.component.html',
@@ -18,11 +17,12 @@ export class ChampionsComponent implements OnInit {
 
   maxCount: any;
   pageIndex: any;
-
+  loading?: boolean
   pageEvent?: PageEvent | undefined;
   timer: any
 
   constructor(private ChampionService: ListChampionService) {
+    this.loading = true
     this.listChampions(0, 8);
   }
   ngOnInit(): void {
@@ -36,9 +36,11 @@ export class ChampionsComponent implements OnInit {
       
       this.listChampions()
     });
-  }
-  listChampions(page?: any, limit?: any): any{
+
     
+  }
+  
+  listChampions(page?: any, limit?: any): any{
     let texto = this.searchText.value;
     console.log(this.searchText.value);
     if (!page) page = 0;
@@ -46,17 +48,21 @@ export class ChampionsComponent implements OnInit {
     if (texto) {
       this.ChampionService.getChampions(page + 1, limit, texto)
       .subscribe(response => {
-        console.log(response);
+        console.log('ver esse', response);
         this.maxCount = response.totalCount;
         this.champions = response.champions;
+        this.loading = false
       });
       this.pageIndex = 1;
+      
       return;
     }
     this.ChampionService.getChampions(page + 1, limit, this.searchText.value)
     .subscribe(response => {
+      console.log('ver esse', response);
       this.maxCount = response.totalCount;
       this.champions = response.champions;
+      this.loading = false
     });
   }
  

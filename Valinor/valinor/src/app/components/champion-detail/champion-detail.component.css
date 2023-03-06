@@ -316,6 +316,16 @@ button{
     padding-bottom: 8px;
     font-size: 2em;
 }
+
+.loading{
+    background-color: black;
+    width: 400px;
+    height: 400px;
+    display: none;
+}
+.loading.showOn{
+    display: flex;
+}
 video{
     max-width: 100%;
     max-height: 100%;

@@ -12,6 +12,8 @@ import { HeaderComponent } from './components/header/header.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';
+import { LoadingComponent } from './components/loading/loading.component';
+import { FreeweekComponent } from './components/freeweek/freeweek.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { SearchComponent } from './components/search/search.component';
     ChampionDetailComponent,
     HeaderComponent,
     SearchComponent,
+    LoadingComponent,
+    FreeweekComponent,
     
   ],
   imports: [

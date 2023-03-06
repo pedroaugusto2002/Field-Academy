@@ -7,23 +7,23 @@ img {
     display: inline-block;
 }
 .container{
-    height: 100%;
+    min-height: 800px;
     display: flex;
     position: relative;
     justify-content: center;
     flex-wrap: wrap;
     gap: 5em;
-    padding-bottom: 60px;
 }
 .championSplashArt{
     display: flex;
     gap: 5%;
     position: relative;
-    width: 18%;
-    max-width: 18%;
+    width: 350px;
+    height: auto;
+    max-width: 350px;
+    max-height: 668px;
     transition: all 0.2s linear;
     overflow: hidden;
-    
     
 }
 .championSplashArt:hover{
@@ -162,6 +162,17 @@ img {
 }
 .searchBar input:hover, input:focus{
     scale: 1.1;
+}
+.loading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    opacity: 0;
+}
+.loading.showOn{
+    opacity: 1;
 }
 @media screen and (max-width: 2100px) {
    

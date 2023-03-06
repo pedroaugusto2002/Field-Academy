@@ -1,18 +1,73 @@
-.header img{
-    max-height: 8em;
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #f9f9f9;
+    text-transform: uppercase;
 }
 .header{
+    height: 50px;
+    padding: 10px;
     display: flex;
-    justify-content: left;
-    background-color: rgb(0, 0, 0);
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    background-color: #111;
+    box-shadow: 1 1 1px black;
+    -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    box-shadow: 0 3px 5px rgba(36, 39, 44, 0.3);
 }
-.logo{
-    width: 150px;
+.left{
     display: flex;
-
+    align-items: center;
+    gap: 30px;
+    width: 50%;
+    max-height: 40px;
 }
-.logo img{
-    width: 75px;
-    height: auto;
+.right{
+    display: flex;
+    justify-content: right;
+    width: 50%;
+    max-height: 40px;
+}
+.logoRiot img{
+    height: 60px;
+    width: auto;
     object-fit: contain;
+}
+.logoLol img{
+    height: 30px;
+    width: auto;
+}
+.gitHub img{
+    border-radius: 9999px;
+    height: 35px;
+    width: auto;
+}
+.links{
+    display: flex;
+    flex-direction: row nowrap;
+    gap: 35px;
+    height: 20px;
+}
+.links h1{
+    transition: all .2s linear;
+}
+.links h1:hover {
+    border-bottom: solid 3px red ;
+    cursor: pointer;
+}
+@media screen and (max-width: 1400px){
+    .header{
+        height: 40px;
+    }
+    .links{
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+    .links h1{
+        font-size: 10px;
+        justify-content: center;
+    }
 }

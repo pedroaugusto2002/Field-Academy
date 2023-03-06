@@ -14,7 +14,10 @@
     </div>
 
     <div class="container">
-        
+        <div *ngIf="loading === true" [ngClass]="{'showOn': loading === true}" class="loading">
+            <img src="https://news-a.akamaihd.net/public/images/pages/2017/march/eu_spaf/moocow.gif" alt="Computer man">
+            <img src="https://sonobel.com.br/assets/img/carregando1.gif" alt="">
+        </div>
         <div class="championSplashArt" 
         *ngFor="let champion of champions">
             <div class="info">

@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { ListChampionService } from 'src/app/services/list-champion.service';
 import { ChampionDetails } from 'src/app/ChampionDetails';
+import { ChampionsComponent } from '../champions/champions.component';
 
 @Component({
   selector: 'app-champion-detail',
@@ -12,6 +13,7 @@ import { ChampionDetails } from 'src/app/ChampionDetails';
 export class ChampionDetailComponent implements OnInit{
   champion!: ChampionDetails ;
   spellSelected = 'p'
+  loading? :  boolean;
   
 
   constructor(
@@ -39,12 +41,13 @@ export class ChampionDetailComponent implements OnInit{
   showSpellDesc(spell: string){
    this.spellSelected = spell
   }
-  
 
   getChampion(): void{
+    this.loading = true
     const id = this.route.snapshot.paramMap.get('id')!;
     this.championService.getChampion(id).subscribe((champion) => {
       this.champion = champion
+      this.loading = false
       console.log(this.champion)
     });
     console.log(this.champion)

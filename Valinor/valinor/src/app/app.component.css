@@ -4,9 +4,12 @@
     
 }
 
-header{
-    position: relative;
-    height: 3em;
+.header{
+    position: sticky;
+    top: 0; 
+    width: 100%;
+    height: 40px;
+    z-index: 9999;
 }
 .container{
     background-image: url("https://steamuserimages-a.akamaihd.net/ugc/910170255372683203/57145AF7CBF72AAE24980B83B1EBCBB8778D42BB/");
@@ -15,6 +18,7 @@ header{
     background-position: center center;
     background-attachment: fixed;
     padding-bottom: 150px;
+    min-height: 800px;
 }
 .container img{
     height: 100%;
