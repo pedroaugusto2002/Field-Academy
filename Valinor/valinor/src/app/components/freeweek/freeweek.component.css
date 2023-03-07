@@ -6,8 +6,14 @@
     margin: 0px;
     font-family: "BeaufortforLOL-Bold";
 }
-.pageTittle{
-    width: 1215px;
+.pageTitle{
+    z-index: 45;
+    font-size: 1.4em;
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+    text-shadow: 2px 2px 5px black;
 }
 .container{
     display: flex;
@@ -17,6 +23,7 @@
     position: relative;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 .carrossel{
    
@@ -232,7 +239,7 @@
   }
   
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 450px){
     *{
         max-width: 100%;
     }
@@ -278,7 +285,13 @@
     .icon{
         scale: .7;
     }
-    .pageTittle{
-        width: 300px;
+    .pageTitle{
+        font-size: .8em;
+        left: 15px;
+        top: 15px;
+        position: absolute;
+    }
+    .pageTitle h1{
+        max-width: 85%;
     }
 }   

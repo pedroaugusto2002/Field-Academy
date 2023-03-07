@@ -3,7 +3,7 @@ import { Champion } from '../Champion';
 import { map, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http'
 
-const api_key = 'RGAPI-fa0914f3-76f3-4655-9cd4-ffecdd71a705'
+const api_key = 'RGAPI-307059cf-cc4e-4c31-84ce-e3a3f55a3c01'
 export interface Player{
   id: string,
   accountId: string,

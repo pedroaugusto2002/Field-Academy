@@ -11,7 +11,7 @@ import { ChampionDetails } from '../ChampionDetails';
 export class ListChampionService {
   url?:string = 'http://localhost:3000/champions?';
   i: any;
-  riotKey:string = 'RGAPI-fa0914f3-76f3-4655-9cd4-ffecdd71a705';
+  riotKey:string = 'RGAPI-307059cf-cc4e-4c31-84ce-e3a3f55a3c01';
   
   constructor(private httpClient: HttpClient) {}
 

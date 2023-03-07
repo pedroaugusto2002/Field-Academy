@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
+  
+  show: boolean = false
+  showLinks(){
+    const links = document.querySelector('.links')
+    links?.classList.toggle('showOn')
+  }
 }
