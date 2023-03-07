@@ -42,16 +42,8 @@ export class FreeweekComponent implements OnInit {
     this.championService.getFreeWeekChampions()
       .subscribe(
         (response) => {
-          console.log(Object.keys(response))
-          this.freeWeekChampions = response;
-          console.log(this.freeWeekChampions.freeChampionIds);
-          this.keys = this.freeWeekChampions.freeChampionIds;
+          this.champions = response
           this.loading = false;
-          this.championService.getChampionByKey(this.freeWeekChampions.freeChampionIds).subscribe(
-            (response) => {
-              this.champions = response
-            }
-          )
         });
 
   }

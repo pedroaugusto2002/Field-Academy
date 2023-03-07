@@ -1,5 +1,22 @@
-<form class="searchBar" (ngSubmit)="searchPlayer()">
-    <input  [formControl]="searchValue" ng="teste()" type="text">
-</form>
-<p>img:{{player.name}}</p>
-<img src="http://ddragon.leagueoflegends.com/cdn/13.4.1/img/profileicon/{{player.profileIconId}}.png" alt="">
+<div class="containerSearchComponent">
+    <form class="searchBar" (ngSubmit)="searchPlayer()">
+        <input  [formControl]="searchValue" ng="teste()" type="text">
+    </form>
+    <div *ngIf="player" class="background">
+        <div class="mainProfileInfos">
+            <div class="icon">
+                <img src="https://opgg-static.akamaized.net/images/profile_icons/profileicon{{player.profileIconId}}.jpg?image=q_auto,f_webp,w_auto&v=1678078753492" alt="">
+            </div>
+            <div class="titles">
+                <div class="name">
+                    <h1>{{player.name}}</h1>
+                </div>
+                <div class="nivel">
+                    <h1>Nivel: {{player.summonerLevel}}</h1>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+

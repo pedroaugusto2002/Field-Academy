@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Player, SearchService } from 'src/app/services/search.service';
+import {  SearchService } from 'src/app/services/search.service';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  player!: Player;
+  player!: any;
   searchValue = new FormControl('')
 
   constructor(
@@ -26,9 +26,12 @@ export class SearchComponent implements OnInit {
     this.SearchService.seachProfile(textValue!)
     .subscribe
     ((response) =>{
-      this.player = response
-      return }
-
+      const [player, topChampions, leagues] = response
+      player.topChampions = topChampions
+      player.leagues = leagues
+      this.player = player
+      console.log('aqui' , Object.keys(this.player))
+    }
     )
   }
 
