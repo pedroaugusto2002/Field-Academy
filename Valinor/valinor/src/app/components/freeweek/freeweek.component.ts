@@ -25,11 +25,10 @@ export class FreeweekComponent implements OnInit {
 
   constructor(private championService: ListChampionService) {
     this.FreeWeekChampions();
-    this.carrossel();
     
   }
   ngOnInit(): void{
-    
+    this.carrossel();
   }
   
   iconCenter(){
@@ -44,7 +43,7 @@ export class FreeweekComponent implements OnInit {
         });
 
   }
-
+  
   carrossel(): void{
     this.selected = -1;
     this.clock = setInterval(():any =>{

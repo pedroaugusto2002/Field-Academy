@@ -5,7 +5,7 @@
   <div class="carrossel">
     <div class="list">
       <div class="fullScreenImages">
-
+        
         <div class="fullScreen" *ngFor="let champion of champions"
           [ngClass]="{'showOn' : champion.id === selectedChampion}">
           <img class="fullScreenImage" src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champion.id}}_0.jpg" alt="">

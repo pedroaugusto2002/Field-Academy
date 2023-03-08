@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { FreeweekComponent } from './components/freeweek/freeweek.component';
+import { TotopbuttonComponent } from './components/totopbutton/totopbutton.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FreeweekComponent } from './components/freeweek/freeweek.component';
     SearchComponent,
     LoadingComponent,
     FreeweekComponent,
+    TotopbuttonComponent,
     
   ],
   imports: [

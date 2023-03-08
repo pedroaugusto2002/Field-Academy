@@ -14,6 +14,7 @@ export class SearchComponent implements OnInit {
   searchValue = new FormControl('')
   winrate?: number;
   champions: Champion[] = []
+  noContant: boolean = true;
   
 
   constructor(
@@ -22,7 +23,6 @@ export class SearchComponent implements OnInit {
   ){
   }
   ngOnInit(){
-    this.searchPlayer()
     this.searchValue.valueChanges.subscribe(text =>{
       if(!text) return
     })
@@ -39,22 +39,23 @@ export class SearchComponent implements OnInit {
       player.topChampions = topChampions
       player.leagues = leagues
       this.player = player
-      this.winrate = this.player.leagues[0].wins / (this.player?.leagues[0].wins + this.player?.leagues[0].losses) * 100
+      if(leagues.length){
+        this.winrate = this.player.leagues[0].wins / (this.player?.leagues[0].wins + this.player?.leagues[0].losses) * 100
       
-      player.leagues[0].winRate = this.winrate.toFixed(0)
+        player.leagues[0].winRate = this.winrate.toFixed(0)
+      }
       
-      this.ChampionService.getChampionByKey(
-      topChampions[0].championId, 
-      topChampions[1].championId, 
-      topChampions[2].championId)
+      if(topChampions){this.ChampionService.getChampionByKey(
+      this.player.topChampions[0].championId, 
+      this.player.topChampions[1].championId, 
+      this.player.topChampions[2].championId)
       .subscribe(
       (response) =>{
         this.champions = response
-        console.log('aaaaaaaaaaaaa', this.champions)
-      })
+        this.noContant = false
+      })}
     }
     )
   }
-
 
 }
