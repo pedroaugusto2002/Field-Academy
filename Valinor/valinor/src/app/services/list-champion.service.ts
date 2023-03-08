@@ -11,7 +11,7 @@ import { ChampionDetails } from '../ChampionDetails';
 export class ListChampionService {
   url?: string = 'http://localhost:3000/champions?';
   i: any;
-  riotKey: string = 'RGAPI-307059cf-cc4e-4c31-84ce-e3a3f55a3c01';
+  riotKey: string = 'RGAPI-fabbcc5e-2bbf-432d-9f1c-2b0da3ce2737';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -62,4 +62,15 @@ export class ListChampionService {
         })
       );
   }
+  getChampionByKey(championKey1:number, championKey2:number, ChampionKey3:number):Observable<Champion[]>{
+    return this.httpClient
+    .get<Champion[]>(`http://localhost:3000/champions?key=${championKey1}&key=${championKey2}&key=${ChampionKey3}`)
+    .pipe(
+      map((response) => {
+        console.log('essa agora', response)
+        return response
+      })
+    );
+  }
+
 }

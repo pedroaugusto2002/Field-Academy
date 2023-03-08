@@ -11,7 +11,7 @@ import {
 } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-const api_key = 'RGAPI-307059cf-cc4e-4c31-84ce-e3a3f55a3c01';
+const api_key = 'RGAPI-fabbcc5e-2bbf-432d-9f1c-2b0da3ce2737';
 
 @Injectable({
   providedIn: 'root',
@@ -22,6 +22,7 @@ export class SearchService {
   seachProfile(searchValue: string): Observable<[Player, TopChampion[], League[]]> {
     return this.httpClient
       .get<Player>(
+        //${searchValue}
         `https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${searchValue}?api_key=${api_key}`
       )
       .pipe(

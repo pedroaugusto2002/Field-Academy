@@ -33,10 +33,7 @@ export class FreeweekComponent implements OnInit {
   }
   
   iconCenter(){
-    
-    console.log('icon center')
-      let icon = document.querySelector('.icon.selectedIcon')
-    console.log('terminei')
+    let icon = document.querySelector('.icon.selectedIcon')
   }
   FreeWeekChampions(): void {
     this.championService.getFreeWeekChampions()

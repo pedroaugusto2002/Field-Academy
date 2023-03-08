@@ -33,6 +33,7 @@ export interface League {
     leaguePoints: number,
     wins: number,
     losses: number,
+    winRate?: string,
     veteran: boolean,
     inactive: boolean,
     freshBlood: boolean,
